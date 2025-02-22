@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: MIT
+---
+- ansible.builtin.include_tasks: ca_certs.yaml
+  when: certificates_install_ca
+
+- ansible.builtin.include_tasks: certs.yaml
+  when: certificates_install_certs

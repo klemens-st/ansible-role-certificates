@@ -1,0 +1,4 @@
+# SPDX-License-Identifier: MIT
+---
+- name: update ca certificates
+  ansible.builtin.command: update-ca-certificates

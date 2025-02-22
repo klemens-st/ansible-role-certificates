@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: MIT
+---
+- name: Ensure ansible managed CA directory exists.
+  ansible.builtin.file:
+    path: "{{ certificates_ca_path }}"
+    state: directory
+    mode: '0755'
+    owner: root
+    group: root
+
+- name: Install custom CA certificates.
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ certificates_ca_path }}/{{ item | basename }}"
+    owner: root
+    group: root
+    mode: "0644"
+  loop: "{{ certificates_ca_certs }}"
+  notify: update ca certificates

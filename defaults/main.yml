@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: MIT-0
+---
+certificates_install_ca: false
+certificates_install_certs: false
+
+certificates_ca_path: "/usr/local/share/ca-certificates/ansible"
+certificates_ca_certs: []
+# - path/to/ca/cert
+
+certificates_certs_path: "/etc/ssl/certs"
+certificates_keys_path: "/etc/ssl/private"
+certificates_certs: []
+# - cert: path/to/Example.crt
+#   key: path/to/Example.key

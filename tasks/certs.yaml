@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: MIT
+---
+- name: Ensure custom certificates are installed.
+  ansible.builtin.copy:
+    src: "{{ item.cert }}"
+    dest: "{{ certificates_certs_path }}/{{ item.cert | basename }}"
+    owner: root
+    group: root
+    mode: "0644"
+  loop: "{{ certificates_certs }}"
+- name: Ensure custom certificate keys are installed.
+  ansible.builtin.copy:
+    src: "{{ item.key }}"
+    dest: "{{ certificates_keys_path }}/{{ item.key | basename }}"
+    owner: root
+    group: root
+    mode: "0600"
+  loop: "{{ certificates_certs }}"
