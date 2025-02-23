@@ -66,8 +66,8 @@ Including an example of how to use your role (for instance, with variables passe
     certificates_ca_certs:
      - files/MySpecialCA.crt
     certificates_certs:
-      cert: files/server.pem
-      key: files/server.key
+      - cert: files/server.pem
+        key: files/server.key
 
 ```
 
