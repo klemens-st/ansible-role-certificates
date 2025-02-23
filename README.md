@@ -55,10 +55,21 @@ Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+```yaml
+- hosts: servers
+  roles:
+    - klemens-st.certificates
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+  vars:
+    certificates_install_ca: true
+    certificates_install_certs: true
+    certificates_ca_certs:
+     - files/MySpecialCA.crt
+    certificates_certs:
+      cert: files/server.pem
+      key: files/server.key
+
+```
 
 License
 -------
